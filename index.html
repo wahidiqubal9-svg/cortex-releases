@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cortex — NEET PG & INI-CET Mentor</title>
+  <style>
+    :root { --ink:#0B1220; --card:#111A29; --paper:#F7F5F0; --teal:#0F766E; --mint:#5EEAD4; --muted:#B6C2D6; }
+    * { box-sizing: border-box; }
+    body { margin:0; min-height:100vh; background:radial-gradient(circle at 85% 0%, #134E4A 0%, transparent 40%), var(--ink); color:var(--paper); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; display:flex; align-items:center; justify-content:center; padding:24px; }
+    .card { width:100%; max-width:440px; background:rgba(17,26,41,.86); border:1px solid #243044; border-radius:28px; padding:28px; box-shadow:0 30px 80px rgba(0,0,0,.45); }
+    .brand { display:flex; align-items:center; gap:10px; color:var(--mint); font-weight:700; letter-spacing:1.5px; font-size:12px; }
+    .dot { width:10px; height:10px; border-radius:50%; background:var(--mint); box-shadow:0 0 20px var(--mint); }
+    h1 { font-family:Georgia,serif; font-weight:500; font-size:46px; line-height:1; letter-spacing:-1.5px; margin:28px 0 10px; }
+    .sub { color:var(--muted); font-size:15px; line-height:1.6; margin:0 0 22px; }
+    .meta { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:22px; }
+    .pill { border:1px solid #2B3A50; color:var(--muted); border-radius:999px; padding:6px 10px; font-size:11px; }
+    a.download { display:flex; align-items:center; justify-content:center; gap:8px; width:100%; padding:16px; background:var(--teal); color:white; text-decoration:none; border-radius:16px; font-weight:700; font-size:16px; }
+    a.download:active { transform:scale(.99); }
+    .hint { color:#7F8EA5; font-size:12px; line-height:1.55; margin-top:14px; }
+    a.alt { color:var(--mint); font-size:13px; text-decoration:none; display:inline-block; margin-top:12px; }
+    .note { border-top:1px solid #243044; margin-top:22px; padding-top:16px; color:#7F8EA5; font-size:12px; line-height:1.55; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="brand"><span class="dot"></span>CORTEX · NEET PG · INI-CET</div>
+    <h1>Know what to study next.</h1>
+    <p class="sub">A strict, always-on study mentor. It plans, tracks, measures and revises — while Marrow and PrepLadder remain your content.</p>
+    <div class="meta">
+      <span class="pill" id="version">Latest build</span>
+      <span class="pill">Android 8+</span>
+      <span class="pill">Local-first</span>
+    </div>
+    <a class="download" href="cortex-latest.apk" download>Download Cortex APK</a>
+    <p class="hint">If the download does not start, open this page in Chrome, then tap the button again. Allow Chrome to install unknown apps when prompted.</p>
+    <a class="alt" href="https://github.com/wahidiqubal9-svg/cortex-releases/releases/latest">View GitHub release</a>
+    <div class="note">Your study data stays on your device. API keys are encrypted with Android Keystore. Updates are delivered from inside the app.</div>
+  </main>
+  <script>
+    fetch('version.json').then(r => r.json()).then(v => {
+      document.getElementById('version').textContent = 'v' + v.versionName;
+    }).catch(() => {});
+  </script>
+</body>
+</html>
